@@ -102,31 +102,33 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Stack(children: [
-              Container(
-                height: 420,
-                width: 360,
-                child: ClipPath(
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 214, 223, 214),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          'https://images.unsplash.com/photo-1598764557991-b9f211b73b81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBsYW50c3xlbnwwfHwwfHx8MA%3D%3D',
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 0, sigmaY: 3),
-                      child: Container(
-                          color: Colors.transparent // Adjust opacity as needed
+            Stack(
+              children: [
+                Container(
+                  height: 400,
+                  width: 360,
+                  child: ClipPath(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 214, 223, 214),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://images.unsplash.com/photo-1598764557991-b9f211b73b81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBsYW50c3xlbnwwfHwwfHx8MA%3D%3D',
                           ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 0, sigmaY: 3),
+                        child: Container(
+                            color:
+                                Colors.transparent // Adjust opacity as needed
+                            ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
+                Positioned(
                   top: 20,
                   left: 20,
                   right: 20,
@@ -134,81 +136,122 @@ class HomePage extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-                        height: 390,
+                        height: 360,
                         width: 280,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(45),
                         ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  height: 200,
-                                  width: 250,
-                                  decoration: BoxDecoration(
-                                      color: Colors.deepPurple,
-                                    borderRadius: BorderRadius.circular(24)
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(24),
-                                    child: Image.network(
-                                      'https://images.unsplash.com/photo-1477554193778-9562c28588c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGxhbnRzfGVufDB8fDB8fHww',
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height: 200,
+                              width: 250,
+                              decoration: BoxDecoration(
+                                  color: Colors.deepPurple,
+                                  borderRadius: BorderRadius.circular(24)),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(24),
+                                child: Image.network(
+                                  'https://images.unsplash.com/photo-1477554193778-9562c28588c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGxhbnRzfGVufDB8fDB8fHww',
+                                  fit: BoxFit.cover,
                                 ),
-                                Text('The Potted Head',
+                              ),
+                            ),
+                            Text(
+                              'The Potted Head',
+                              style: GoogleFonts.akatab(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'Perfect for beginners or anyone looking'
+                                ' for an easy-to-care plant.',
                                 style: GoogleFonts.akatab(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24,
+                                    fontSize: 16, color: Colors.grey[700]),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                print('wozaa');
+                              },
+                              child: Container(
+                                margin:
+                                    const EdgeInsets.only(left: 20, right: 20),
+                                height: 45,
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    color: Colors.black,
                                 ),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    const Icon(
+                                      Boxicons.bx_basket,
+                                      color: Colors.yellowAccent,
+                                    ),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    Text(
+                                      'Add to Cart',
+                                      style: GoogleFonts.akatab(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 78,
+                                    ),
+                                    Text(
+                                      '\$50.00',
+                                      style: GoogleFonts.akatab(
+                                          color: Colors.white, fontSize: 21),
+                                    ),
+                                  ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10.0),
-                                  child: Text('Perfect for beginners or anyone looking'
-                                      ' for an easy-to-care plant.',
-                                    style: GoogleFonts.akatab(
-                                      fontSize: 16,
-                                      color: Colors.grey[700]
-                                    ),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: (){
-                                    print('wozaa');
-                                  },
-                                  child: Container(
-                                    margin: const EdgeInsets.only(left: 20, right: 20),
-                                    height: 45,
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(25),
-                                      color: Colors.black
-                                    ),
-                                    child:  Row(
-                                      children:  [
-                                      const  SizedBox(width: 8,),
-                                       const Icon(Boxicons.bx_basket, color: Colors.yellowAccent,),
-                                        const SizedBox(width: 8,),
-                                        Text('Add to Cart', style: GoogleFonts.akatab(
-                                          color: Colors.white,
-                                        ),),
-                                        const SizedBox(width: 78,),
-                                        Text('\$50.00', style: GoogleFonts.akatab(
-                                          color: Colors.white,
-                                          fontSize: 21
-                                        ),),
-                                      ],
-                                    ),
-                                  ),
-                                )
-                              ],
-                            )),
-
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
-                  ))
-            ]),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 10, left: 150, right: 150),
+              height: 4,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                gradient:const LinearGradient(colors: [Colors.white70, Colors.green],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomLeft,
+                ),
+                borderRadius: BorderRadius.circular(35),
+              ),
+            ),
+            Container(
+              margin:const EdgeInsets.only(top: 10, left: 10, right: 10),
+              height: 100,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [Colors.white70, Colors.green],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomLeft,
+                ),
+                borderRadius: BorderRadius.circular(35),
+
+              ),
+              child: Row(),
+            ),
           ],
         ),
       ),
