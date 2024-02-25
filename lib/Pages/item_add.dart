@@ -1,3 +1,4 @@
+import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -97,73 +98,104 @@ class _ItemPageState extends State<ItemPage> {
               ],
             ),
             Center(
-              child: Text('Perfect for a beginner or anyone\n looking for an '
-                  ' easy-to-take-care for plant', style: GoogleFonts.damion(
-                fontSize:21,
-                color: Colors.grey[700],
-              ),),
-            ),
-            Positioned(
-              left: 10,
-              top: 160,
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: Colors.green),
-                ),
-                child: Text(
-                  counter.toString().padLeft(2, '0'), // Display 00 format
-                  style: const TextStyle(fontSize: 20),
+              child: Text(
+                'Perfect for a beginner or anyone\n looking for an '
+                ' easy-to-take-care for plant',
+                style: GoogleFonts.adamina(
+                  fontSize: 21,
+                  color: Colors.grey[700],
                 ),
               ),
             ),
-            // Increment button
-            Positioned(
-              right: 10,
-              top: 160,
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    counter = counter + 1;
-                  });
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: Colors.green),
-                  ),
-                  child: const Icon(Icons.add),
-                ),
-              ),
+            const SizedBox(
+              height: 15,
             ),
-            // Decrement button
-            Positioned(
-              right: 70,
-              top: 160,
-              child: GestureDetector(
-                onTap: () {
-                  if (counter > 0) {
-                    setState(() {
-                      counter = counter - 1;
-                    });
-                  }
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color: Colors.green),
+            Container(
+              padding: const EdgeInsets.only(left: 13, right: 13),
+              height: 120,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      if (counter > 0) {
+                        setState(() {
+                          counter = counter - 1;
+                        });
+                      }
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Icon(Icons.remove, size: 38,),
+                    ),
                   ),
-                  child: const Icon(Icons.remove),
-                ),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    child: Text(
+                      counter.toString().padLeft(2, '0'), // Display 00 format
+                      style: const TextStyle(fontSize: 80, color: Colors.white70),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        counter = counter + 1;
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Icon(Icons.add, size: 38,),
+                    ),
+                  ),
+                ],
               ),
             ),
 
+
+         const   SizedBox(height: 25,),
+            Container(
+              margin:
+              const EdgeInsets.only(left: 20, right: 20),
+              height: 65,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(75),
+                color: Colors.black,
+              ),
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  const CircleAvatar(
+                    backgroundColor: Colors.lightBlueAccent,
+                   child:   Icon(
+                     Boxicons.bx_basket,
+                     color: Colors.black,
+                     size: 34,
+                   ),
+                 ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    'Add to Cart',
+                    style: GoogleFonts.akatab(
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 130,
+                  ),
+                  Text(
+                    '\$50.00',
+                    style: GoogleFonts.akatab(
+                        color: Colors.white, fontSize: 21),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

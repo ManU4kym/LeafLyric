@@ -25,4 +25,4 @@ Bring the serenity of nature into your home with LeafLyric. Explore our collecti
 
 ![Home Screen](flutter_01.png)
 
-![Details Screen]()
+![Details Screen](flutter_02.png)
