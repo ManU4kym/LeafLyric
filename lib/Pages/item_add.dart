@@ -9,6 +9,7 @@ class ItemPage extends StatefulWidget {
 }
 
 class _ItemPageState extends State<ItemPage> {
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +102,68 @@ class _ItemPageState extends State<ItemPage> {
                 fontSize:21,
                 color: Colors.grey[700],
               ),),
-            )
+            ),
+            Positioned(
+              left: 10,
+              top: 160,
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: Colors.green),
+                ),
+                child: Text(
+                  counter.toString().padLeft(2, '0'), // Display 00 format
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+            // Increment button
+            Positioned(
+              right: 10,
+              top: 160,
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    counter = counter + 1;
+                  });
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color: Colors.green),
+                  ),
+                  child: const Icon(Icons.add),
+                ),
+              ),
+            ),
+            // Decrement button
+            Positioned(
+              right: 70,
+              top: 160,
+              child: GestureDetector(
+                onTap: () {
+                  if (counter > 0) {
+                    setState(() {
+                      counter = counter - 1;
+                    });
+                  }
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color: Colors.green),
+                  ),
+                  child: const Icon(Icons.remove),
+                ),
+              ),
+            ),
+
           ],
         ),
       ),

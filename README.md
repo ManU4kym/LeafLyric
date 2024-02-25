@@ -21,3 +21,8 @@ Connect with fellow plant enthusiasts, share your green triumphs, and seek advic
 Bring the serenity of nature into your home with LeafLyric. Explore our collection, embrace the joy of plant parenthood, and let the beauty of greenery enrich your life.
 
 🌿 Where Every Plant Tells a Story. 🌿
+
+
+![Home Screen](flutter_01.png)
+
+![Details Screen]()
