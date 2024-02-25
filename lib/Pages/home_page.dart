@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wrapper_list/Pages/item_add.dart';
 import 'package:wrapper_list/widgets/text_widg.dart';
 
 class HomePage extends StatelessWidget {
@@ -149,12 +150,12 @@ class HomePage extends StatelessWidget {
                               height: 200,
                               width: 250,
                               decoration: BoxDecoration(
-                                  color: Colors.deepPurple,
+                                  color: const Color.fromARGB(113, 73, 67, 84),
                                   borderRadius: BorderRadius.circular(24)),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(24),
                                 child: Image.network(
-                                  'https://images.unsplash.com/photo-1477554193778-9562c28588c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGxhbnRzfGVufDB8fDB8fHww',
+                                  'https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFJvc2VzfGVufDB8fDB8fHww',
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -177,7 +178,11 @@ class HomePage extends StatelessWidget {
                             ),
                             GestureDetector(
                               onTap: () {
-                                print('wozaa');
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const ItemPage(),
+                                  ),
+                                );
                               },
                               child: Container(
                                 margin:
@@ -185,8 +190,8 @@ class HomePage extends StatelessWidget {
                                 height: 45,
                                 width: MediaQuery.of(context).size.width,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25),
-                                    color: Colors.black,
+                                  borderRadius: BorderRadius.circular(25),
+                                  color: Colors.black,
                                 ),
                                 child: Row(
                                   children: [
@@ -231,7 +236,8 @@ class HomePage extends StatelessWidget {
               height: 4,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                gradient:const LinearGradient(colors: [Colors.white70, Colors.green],
+                gradient: const LinearGradient(
+                  colors: [Colors.white70, Colors.green],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomLeft,
                 ),
@@ -239,16 +245,16 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin:const EdgeInsets.only(top: 10, left: 10, right: 10),
+              margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
               height: 100,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [Colors.white70, Colors.green],
+                gradient: const LinearGradient(
+                  colors: [Colors.white70, Colors.green],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomLeft,
                 ),
                 borderRadius: BorderRadius.circular(35),
-
               ),
               child: Row(),
             ),
